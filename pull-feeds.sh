@@ -4,6 +4,7 @@
 IFS=$'\n'$'\r'
 c=0
 
+rm feed-cache/*.xml
 for f in `cat feeds.txt`;
 do
 	if [[ ${f:0:1} != "#" ]]
