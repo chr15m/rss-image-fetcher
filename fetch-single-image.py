@@ -11,6 +11,11 @@ from xml.etree import ElementTree as ET
 from BeautifulSoup import BeautifulSoup
 import feedparser
 
+try:
+	os.mkdir("/tmp/rss-image-fetch")
+except:
+	pass
+
 feeds = [x for x in os.listdir("feed-cache") if x.endswith(".xml")]
 
 def image_from_rss_feed(feed_file):
@@ -56,7 +61,7 @@ if feeds:
 		# sanity check url
 		if len(extension) > 4:
 			extension = "jpg"
-		f = open('/tmp/rss-image-fetch.' + extension, 'wb')
+		f = open('/tmp/rss-image-fetch/tmp.' + extension, 'wb')
 		f.write(urllib.urlopen(url).read())
 		f.close()
 	else:
