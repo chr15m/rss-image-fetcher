@@ -7,7 +7,7 @@ import pygame
 
 pygame.init()
 screen = pygame.display.set_mode((0, 0))
-# pygame.display.toggle_fullscreen()
+pygame.display.toggle_fullscreen()
 screensize = (screen.get_width(), screen.get_height())
 
 path = "/tmp/rss-image-fetch"
