@@ -1,4 +1,4 @@
-Scripts to fetch and randomly display images from RSS feeds. Good for showing your Pinterest or favourite Tumblr image blogs on a Raspberry Pi driven picture frame.
+Fetch and display random images from RSS feeds. Good for showing your Pinterest or favourite Tumblr image blogs on a Raspberry Pi driven picture frame.
 
 Create a file called feeds.txt with a list of RSS/Atom image feeds in it like this:
 
