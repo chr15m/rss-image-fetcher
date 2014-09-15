@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Fetch a single image from the directory of feeds in feed-cache
 
