@@ -14,3 +14,5 @@ Put `pull-feeds.sh` in a crontab updating about once a day or so.
 Put `fetch-single-image.py` in a crontab updating every few minutes.
 
 Then run `show-image-fullscreen.py` on your device.
+
+GPLv3 licensed, Copyright Chris McCormick, 2014.
