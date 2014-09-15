@@ -1,0 +1,6 @@
+virtualenv
+config.py
+feeds.txt
+feed-cache/*.xml
+.*.swp
+.*.swo
