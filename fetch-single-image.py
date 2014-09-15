@@ -51,17 +51,17 @@ if feeds:
 	tree = ET.fromstring(file(os.path.join("feed-cache", feed_file)).read())
 	# grab random image url from feed
 	url = ""
-	if tree.tag == "rss":
-		url = image_from_rss_feed(feed_file)
-	elif tree.tag == "tumblr":
-		url = image_from_tumblr(tree)
+	count = 0
+	while not url and count < 10:
+		print "Feed type:", tree.tag
+		if tree.tag == "rss" or tree.tag.endswith("feed"):
+			url = image_from_rss_feed(feed_file)
+		elif tree.tag == "tumblr":
+			url = image_from_tumblr(tree)
+		count += 1
 	if url:
 		# download the image
-		extension = url.split(".").pop()
-		# sanity check url
-		if len(extension) > 4:
-			extension = "jpg"
-		f = open('/tmp/rss-image-fetch/tmp.' + extension, 'wb')
+		f = open('/tmp/rss-image-fetch/tmp', 'wb')
 		f.write(urllib.urlopen(url).read())
 		f.close()
 	else:
