@@ -9,6 +9,7 @@ for f in `cat feeds.txt`;
 do
 	if [[ ${f:0:1} != "#" ]]
 	then
+		echo "$f" > feed-cache/$c.url
 		wget "$f" -O feed-cache/$c.xml
 		c=`expr $c + 1`
 	fi
