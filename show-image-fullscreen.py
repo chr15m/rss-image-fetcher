@@ -34,14 +34,14 @@ class ImageReloader(FileSystemEventHandler):
 	def get_surface(self):
 		if self.fade:
 			if self.surface.get_alpha():
-				self.surface.set_alpha(self.surface.get_alpha() - self.rate)
+				self.surface.set_alpha((self.surface.get_alpha() or 0) - self.rate)
 			else:
 				self.fade = False
 				self.surface = self.new_surface
 				self.size = self.new_size
 				self.surface.set_alpha(0)
 		elif int(self.surface.get_alpha() or 0) < 255:
-			self.surface.set_alpha(self.surface.get_alpha() + self.rate)
+			self.surface.set_alpha((self.surface.get_alpha() or 0) + self.rate)
 		return self.surface 
 	
 	def refresh(self):
